@@ -3,7 +3,7 @@ pkgver="2.26"
 pkgdesc="Alpine Liux package for the GNU C Library (glibc)"
 arch="x86_64"
 url="https://github.com/MihaiBogdanEugen/alpine-glibc-apk"
-license="GPL-3.0"
+license="GPL"
 source="https://github.com/MihaiBogdanEugen/glibc-builder/releases/download/$pkgver/glibc-bin-$pkgver.tar.gz
 nsswitch.conf
 ld.so.conf"
