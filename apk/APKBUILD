@@ -1,0 +1,54 @@
+# Maintainer: Bogdan Mihai <mbe1224@gmail.com>
+
+pkgname="glibc"
+pkgver="2.24"
+pkgrel="1"
+pkgdesc="Alpine Liux package for the GNU C Library (glibc)"
+arch="x86_64"
+url="https://github.com/MihaiBogdanEugen/alpine-glibc-apk"
+license="GPL"
+source="https://github.com/MihaiBogdanEugen/glibc-builder/releases/download/$pkgver/glibc-bin-$pkgver.tar.gz
+nsswitch.conf
+ld.so.conf"
+subpackages="$pkgname-bin $pkgname-dev $pkgname-i18n"
+triggers="$pkgname-bin.trigger=/lib:/usr/lib:/usr/glibc-compat/lib"
+
+package() {
+  mkdir -p "$pkgdir/lib" "$pkgdir/lib64" "$pkgdir/usr/glibc-compat/lib/locale" "$pkgdir"/etc
+  cp -a "$srcdir"/usr "$pkgdir"
+  cp "$srcdir"/nsswitch.conf "$pkgdir"/etc/nsswitch.conf
+  cp "$srcdir"/ld.so.conf "$pkgdir"/usr/glibc-compat/etc/ld.so.conf
+  rm "$pkgdir"/usr/glibc-compat/etc/rpc
+  rm -rf "$pkgdir"/usr/glibc-compat/bin
+  rm -rf "$pkgdir"/usr/glibc-compat/sbin
+  rm -rf "$pkgdir"/usr/glibc-compat/lib/gconv
+  rm -rf "$pkgdir"/usr/glibc-compat/lib/getconf
+  rm -rf "$pkgdir"/usr/glibc-compat/lib/audit
+  rm -rf "$pkgdir"/usr/glibc-compat/share
+  rm -rf "$pkgdir"/usr/glibc-compat/var
+  ln -s /usr/glibc-compat/lib/ld-linux-x86-64.so.2 ${pkgdir}/lib/ld-linux-x86-64.so.2
+  ln -s /usr/glibc-compat/lib/ld-linux-x86-64.so.2 ${pkgdir}/lib64/ld-linux-x86-64.so.2
+  ln -s /usr/glibc-compat/etc/ld.so.cache ${pkgdir}/etc/ld.so.cache
+}
+
+bin() {
+  depends="$pkgname libgcc"
+  mkdir -p "$subpkgdir"/usr/glibc-compat
+  cp -a "$srcdir"/usr/glibc-compat/bin "$subpkgdir"/usr/glibc-compat
+  cp -a "$srcdir"/usr/glibc-compat/sbin "$subpkgdir"/usr/glibc-compat
+}
+
+i18n() {
+  depends="$pkgname-bin"
+  arch="noarch"
+  mkdir -p "$subpkgdir"/usr/glibc-compat
+  cp -a "$srcdir"/usr/glibc-compat/share "$subpkgdir"/usr/glibc-compat
+}
+
+check() {
+  msg2 "This package has no tests"
+}
+
+sha512sums="a74868ab397c36251aa889a1aa7a8e88ce5f09609a127aefa128f8edc7b436d7933a4a928168f31255e3be3a09117ef9b315a95d10967490db81583e778856d3  glibc-bin-2.24.tar.gz
+6db20bcf411050745ae380c043b22f63079b6344e12ff6232888357859b8ee561bcc583dca15c01760d5f8ead3eb36ca479397f80232bf2a393d88b26065479b  nsswitch.conf
+ce1231645a3689f5587a2c45a68936062fb8a3b420a3054aeba83bbfa554d96c51379c6e2d790905a21987c02435ee4df6a43244f4fee0afe991fce3e28eb801  ld.so.conf"

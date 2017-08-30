@@ -1,0 +1,5 @@
+*.gz
+.*.swp
+aports/
+target/
+user.abuild/mbe1224@gmail.com.rsa
