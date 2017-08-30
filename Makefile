@@ -1,4 +1,4 @@
-BUILD_ID ?= ${USER}
+BUILD_ID ?= mbe1224
 
 .PHONY: builder
 builder:
@@ -6,6 +6,7 @@ builder:
 
 target:
 	mkdir -p target
+
 aports:
 	git clone git://dev.alpinelinux.org/aports
 
@@ -29,11 +30,11 @@ build: builder target aports
 
 .PHONY: tester
 tester:
-	docker build -t apk_testing:${BUILD_ID} testing/
+	docker build -t apk_tester:${BUILD_ID} tester/
 
 test: tester target
 	docker run -ti \
-		-v ${PWD}/target:/repo \
+		-v ${PWD}/target/work/x86_64 \
 		-v ${PWD}/user.abuild/:/home/abuild/ \
 		--privileged \
-		apk_testing:${BUILD_ID}
+		apk_tester:${BUILD_ID}
