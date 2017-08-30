@@ -1,5 +1,5 @@
 pkgname="glibc"
-pkgver="2.26"
+pkgver="2.24"
 pkgrel="1"
 pkgdesc="Alpine Liux package for the GNU C Library (glibc)"
 arch="x86_64"
@@ -43,6 +43,6 @@ i18n() {
   cp -a "$srcdir"/usr/glibc-compat/share "$subpkgdir"/usr/glibc-compat
 }
 
-sha512sums="b63a4b0296dd5551e881a205522a60a43c1dfe434a6209ca7d4d63e55d4efdb5c49428bba4d04ee590ad229dd9e3c1ad803bf7cee8f807a644995d5566600db1  glibc-bin-2.26.tar.gz
+sha512sums="a74868ab397c36251aa889a1aa7a8e88ce5f09609a127aefa128f8edc7b436d7933a4a928168f31255e3be3a09117ef9b315a95d10967490db81583e778856d3  glibc-bin-2.24.tar.gz
 6db20bcf411050745ae380c043b22f63079b6344e12ff6232888357859b8ee561bcc583dca15c01760d5f8ead3eb36ca479397f80232bf2a393d88b26065479b  nsswitch.conf
 ce1231645a3689f5587a2c45a68936062fb8a3b420a3054aeba83bbfa554d96c51379c6e2d790905a21987c02435ee4df6a43244f4fee0afe991fce3e28eb801  ld.so.conf"
