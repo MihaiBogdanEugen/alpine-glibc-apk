@@ -34,7 +34,7 @@ tester:
 
 test: tester target
 	docker run -ti \
-		-v ${PWD}/target/work/x86_64 \
+		-v ${PWD}/target/work/x86_64/:/repo/x86_64/ \
 		-v ${PWD}/user.abuild/:/home/abuild/ \
 		--privileged \
 		apk_tester:${BUILD_ID}
