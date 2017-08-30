@@ -1,7 +1,7 @@
 # Maintainer: Bogdan Mihai <mbe1224@gmail.com>
 
 pkgname="glibc"
-pkgver="2.25"
+pkgver="2.26"
 pkgrel="1"
 pkgdesc="Alpine Liux package for the GNU C Library (glibc)"
 arch="x86_64"
@@ -49,6 +49,6 @@ check() {
   msg2 "This package has no tests"
 }
 
-sha512sums="2ae0ea2487e80d2a30c54fce4c22d5e8f9132ff6c54943d847491cdc57a7bd648ac604774ecd15f0993f2d84fc777d0a36cc1a56ffd53186f328e7ae921a1897  glibc-bin-2.25.tar.gz
+sha512sums="4fa2cf7e8cd70a2d3e0fc3f9122a645c2a02ec9343e7c9fa1d985e5888b093566d851f798e57a5cb9eece929bfef3c01a0fd86ffec16f24b5f187ac50fbc4388  glibc-bin-2.26.tar.gz
 6db20bcf411050745ae380c043b22f63079b6344e12ff6232888357859b8ee561bcc583dca15c01760d5f8ead3eb36ca479397f80232bf2a393d88b26065479b  nsswitch.conf
 ce1231645a3689f5587a2c45a68936062fb8a3b420a3054aeba83bbfa554d96c51379c6e2d790905a21987c02435ee4df6a43244f4fee0afe991fce3e28eb801  ld.so.conf"
