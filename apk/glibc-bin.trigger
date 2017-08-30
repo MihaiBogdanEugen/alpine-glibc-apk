@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 /usr/glibc-compat/sbin/ldconfig
