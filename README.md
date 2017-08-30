@@ -61,8 +61,13 @@ cd /repo/x86_64
 
 12. Add packages
 ```shell
-apk add glibc-2.24-r1.apk
-apk add glibc-bin-2.24-r1.apk
-apk add glibc-dev-2.24-r1.apk
-apk add glibc-i18n-2.24-r1.apk
+apk add glibc-2.25-r1.apk
+apk add glibc-bin-2.25-r1.apk
+apk add glibc-dev-2.25-r1.apk
+apk add glibc-i18n-2.25-r1.apk
+```
+
+12. Exit the docker image
+```shell
+exit
 ```
