@@ -47,7 +47,22 @@ abuild-sign APKINDEX.tar.gz
 exit
 ```
 
-10. (Optional) Test the packages by building and starting the test image
+The next steps are optional and they show how to test the packages:
+
+10. Building and starting the test image
 ```shell
 make test
+```
+
+11. Go to repo folder
+```shell
+cd /repo/x86_64
+```
+
+12. Add packages
+```shell
+apk add glibc-2.24-r1.apk
+apk add glibc-bin-2.24-r1.apk
+apk add glibc-dev-2.24-r1.apk
+apk add glibc-i18n-2.24-r1.apk
 ```
