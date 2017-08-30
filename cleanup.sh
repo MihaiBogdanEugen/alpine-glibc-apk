@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-rm -rdi aports/
+rm -rdf aports/
 rm -rd target/
-rm -rd user.abuild/
