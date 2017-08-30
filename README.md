@@ -9,7 +9,7 @@ make build
 
 2. Generate RSA keys
 ```shell
-~/bin/setup.sh
+~/bin/setup-keys.sh 
 ```
 
 3. Go to the folder that contains the APKBUILD file

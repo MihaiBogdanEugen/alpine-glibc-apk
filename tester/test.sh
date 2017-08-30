@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 cp /home/abuild/*.pub /etc/apk/keys/
